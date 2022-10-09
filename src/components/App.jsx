@@ -3,6 +3,7 @@ import FeedbackOptions from "./FeedbackOptions";
 import SectionTitle from "./SectionTitle";
 import Statistics from "./Statistics";
 import Notification from "./Notification";
+import { Wrapper } from "./app.styled";
 
 class App extends Component {
   state = {
@@ -39,20 +40,7 @@ class App extends Component {
     const totalFeedback = this.countTotalFeedback();
 
     return (
-      <div
-        className="appFeedback"
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          marginRight: 'auto',
-          marginLeft: 'auto',
-          width: '500px',
-          minHeight: '300px',
-          fontSize: 20,
-          color: '#010101',
-        }}
-      >
-  
+      <Wrapper>
         <SectionTitle title='Please leave feedback' className='feedbackOptions'>
           <FeedbackOptions
             options={statesKeys}
@@ -70,8 +58,7 @@ class App extends Component {
                 positivePercentage={this.countPositivePercentage()} />
           }
         </SectionTitle>
-        
-      </div>
+      </Wrapper>
     );
   };
 };

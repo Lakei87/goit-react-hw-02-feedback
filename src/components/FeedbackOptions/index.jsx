@@ -1,6 +1,6 @@
 import { Component } from "react";
 import PropTypes from 'prop-types';
-import styles from './feedbackOptoins.module.css';
+import { Button } from "./feedbackOptions.styled";
 
 class FeedbackOptions extends Component {
 
@@ -8,15 +8,17 @@ class FeedbackOptions extends Component {
         const { options, onLeaveFeedback } = this.props;
         return (
             options.map((option, index) => {
-                return <button
-                    className={styles.button}
+                return <Button
                     key={index}
                     type="button"
-                    onClick={onLeaveFeedback}>{option}</button>;
+                    onClick={onLeaveFeedback}
+                >
+                    {option}
+                </Button>
             })
         );
     };
-}
+};
 
 FeedbackOptions.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string.isRequired),
